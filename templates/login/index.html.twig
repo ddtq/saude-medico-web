@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Hello Admin !{% endblock %}
+
+{% block body %}
+
+  
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 300px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<br>  
+
+<div class="example-wrapper" align="center" style="box-shadow: 0px 1px 3px 2px lightgray; border-radius:2%;" >
+    <br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Logo_PMPR_2.svg/800px-Logo_PMPR_2.svg.png" alt="Smiley face" height="160" width="140">
+    <br>  <br>
+    <form method="post">
+        {% if error %}
+            <div class="alert alert-danger"> {{error.messageKey|trans(error.messageData, 'security')}} </div>
+        {% endif %}
+
+        <div class="form-group">
+            <label for="exampleInputCpf"> <i class="fas fa-cogs"></i> CPF </label>
+            <input type="text"  name="cpf" id="exampleInputCpf" class="form-control"  maxlength="11" style="border:none; border-bottom:1px solid #ed9c2e; max-width:400px; background:transparent;">
+        </div>
+
+        <br> <br>
+
+        <div class="form-group">
+            <label for="exampleInputPassword"> <i class="fas fa-unlock-alt"></i> Password</label>
+            <input type="password"  name="password" class="form-control" id="exampleInputPassword" style="border:none; border-bottom:1px solid #ed9c2e; max-width:400px;  background:transparent;">
+        </div>
+
+        <input type="hidden" name="_csrf_token" value="{{csrf_token('authenticate')}}" > 
+
+        <button type="submit" class="btn btn-outline-primary">Entrar</button>
+
+        <br> <br>
+    </form>
+    
+</div>
+{% endblock %}
