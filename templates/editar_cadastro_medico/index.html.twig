@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EditarCadastroMedicoController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 100%; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div style="width:100%; height:auto;"> <a href="/admin/management" style="float:right; margin-right:12px;"> <u> Home </u> </a > </div>
+
+<div class="example-wrapper" >
+    <div style="display:flex; width:100%; height:auto; position:relative; top:-30px; border-bottom:solid 1px lightgray; " >
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Logo_PMPR_2.svg/800px-Logo_PMPR_2.svg.png" alt="Smiley face" height="70" width="60">
+    </div>
+</div>
+
+{# <span style=" margin:0 auto; margin-left: 20px;"> Edição de cadastro.   </span> <br> <br> #}
+<table class="table table-striped">
+  <thead>
+    <tr align="center">
+      <th scope="col">ID</th>
+      <th scope="col">NOME</th>
+      <th scope="col">CPF</th>
+      <th scope="col">RG</th>
+      <th scope="col">CRM</th>
+      <th scope="col">PHONE</th>
+      <th scope="col">EDITAR | Destivar</th>
+    </tr>
+  </thead>
+
+  <tbody align="center">
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+      <td> 
+        <button type="button" class="btn btn-outline-warning"> <i class="far fa-edit"></i> </button> 
+        <button type="button" class="btn btn-outline-danger"> <i class="fas fa-user-slash"></i> </button> 
+      </td>
+      
+     </tr>
+
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+      <td>@fat</td>
+      <td> 
+        <button type="button" class="btn btn-outline-warning"> <i class="far fa-edit"></i> </button> 
+        <button type="button" class="btn btn-outline-danger"> <i class="fas fa-user-slash"></i> </button>  
+      </td>
+        
+    </tr>
+      
+  </tbody>
+</table>
+<hr>
+{% endblock %}
