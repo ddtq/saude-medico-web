@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CadastrarMedicoController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 100%; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div style="width:100%; height:auto;"> <a href="/admin/management" style="float:right; margin-right:12px;"> <u> Home </u> </a > </div>
+
+<div class="example-wrapper" >
+    <div style="display:flex; width:100%; height:auto; position:relative; top:-20px; border-bottom:solid 1px lightgray;" >
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Logo_PMPR_2.svg/800px-Logo_PMPR_2.svg.png" alt="Smiley face" height="70" width="60">
+    </div>
+</div>
+
+<section style="width:100%; height:auto; "> 
+        <div style="width:100%; height:auto; border-bottom:solid 1px darkgray; "  align="center">
+        <i style="position:relative; top:-30px;" class="fas fa-users"></i>
+        <h5 style=" margin:auto; position:relative; top:-25px;">  Cadastro de médicos.   </h5>
+
+            <form>
+                 <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputNome">* NOME</label>
+                        <input type="text" name="nome" class="form-control" id="inputNome" placeholder="nome">
+                    </div>
+                     <div class="form-group col-md-6">
+                        <label for="inputPassword">* NOVA SENHA </label>
+                        <input type="password" name="passwd" class="form-control" id="inputPassword" placeholder="SENHA">
+                    </div>
+                    
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputRG">* RG</label>
+                        <input type="text" name="rg" class="form-control" id="inputRG" placeholder="RG">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputConfirmPassword">* CONFIRMA SENHA  </label>
+                        <input type="password" name"confirm_passwd" class="form-control" id="inputConfirmPassword" placeholder="CONFIRMAR SENHA">
+                    </div>
+                </div> 
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputCelular">* CELULAR</label>
+                        <input type="text" name="phone" class="form-control" id="inputCelular" placeholder="(41)99999 9999">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputTelefone">* TELEFONE <small> (opcional)</small> </label>
+                        <input type="password" name"passwd" class="form-control" id="inputPassword4" placeholder="(41)3333-3333">
+                    </div>
+                </div> 
+
+                 <div class="form-row">                    
+                    <div class="form-group col-md-6">
+                        <label for="inputCRM">* CRM</label>
+                        <input type="text" name="crm" class="form-control" id="inputCRM" placeholder="CRM">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputCPf">* CPF</label>
+                        <input type="text" name="cpf" class="form-control" id="inputCPf" placeholder="CPF">
+                    </div>                   
+                </div>                                
+                <br>    
+                <button type="submit" class="btn btn-primary"> <i class="fas fa-paper-plane"></i> Cadastrar </button>
+                <br> <br>
+            </form>
+        </div>
+    </section>
+
+ 
+        {# <li>Your controller at <code><a href="{{ '/home/renanbrs/Saude-Medico/src/Controller/CadastrarMedicoController.php'|file_link(0) }}">src/Controller/CadastrarMedicoController.php</a></code></li>
+        <li>Your template at <code><a href="{{ '/home/renanbrs/Saude-Medico/templates/cadastrar_medico/index.html.twig'|file_link(0) }}">templates/cadastrar_medico/index.html.twig</a></code></li> #}
+     
+{% endblock %}
