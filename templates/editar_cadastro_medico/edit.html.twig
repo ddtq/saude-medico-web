@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EditarCadastroMedicoController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 100%; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div style="width:100%; height:auto;"> <a href="/admin/management" style="float:right; margin-right:12px;"> <u> Home </u> </a > </div>
+
+<div class="example-wrapper" >
+    <div style="display:flex; width:100%; height:auto; position:relative; top:-30px; border-bottom:solid 1px lightgray; " >
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Logo_PMPR_2.svg/800px-Logo_PMPR_2.svg.png" alt="Smiley face" height="70" width="60">
+    </div>
+</div>
+
+<span style=" margin:0 auto; margin-left: 20px;"> Edição de cadastro.   </span> <br> <br>
+<br>
+<br>
+<section style="width:100%; height:auto;" align="center"> 
+    <div style="width:80%; height:auto; margin:auto;" align="center" > 
+        <form action="/admin/cadastro/update/user" method="POST">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token('authenticate') }}"> 
+            {% if medico is defined %}
+                <input type="hidden" name="iduser" id="iduser" value="{{medico.ID}}" required> 
+                
+                <label for="idnome"> NOME:  </label>
+                <input type="text" name="nome" id="idnome" value="{{medico.NOME}}" required> 
+                
+                <label for="idcpf"> CPF:  </label>
+                <input type="text" name="cpf" id="idcpf" value="{{medico.cpf}}" maxlegth='11' required> 
+                
+                <label for="idrg"> RG:  </label>
+                <input type="text" name="rg" id="idrg" value="{{medico.rg}}" required> 
+                <br>
+                <br>
+                <label for="idcrm"> CRM:  </label>
+                <input type="text" name="crm" id="idcrm" value="{{medico.crm}}" required> 
+                
+                <label for="idphone1"> PHONE1:  </label>
+                <input type="text" name="phone1" id="idphone1" value="{{medico.phone1}}" required> 
+
+                <label for="idphone2"> PHONE2:  </label>
+                <input type="text" name="phone2" id="idphone2" value="{{medico.phone2}}" required> 
+                <br>
+                <br>
+                <input type="submit" name="Editar" value="Editar" style="color:orange" required>
+            {% endif %}
+        </form>
+    </div>
+</section>
+ 
+{% endblock %}
