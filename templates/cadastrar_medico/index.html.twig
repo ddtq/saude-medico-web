@@ -3,6 +3,7 @@
 {% block title %}Hello CadastrarMedicoController!{% endblock %}
 
 {% block body %}
+
 <style>
     .example-wrapper { margin: 1em auto; max-width: 100%; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
@@ -21,49 +22,49 @@
         <i style="position:relative; top:-30px;" class="fas fa-users"></i>
         <h5 style=" margin:auto; position:relative; top:-25px;">  Cadastro de médicos.   </h5>
 
-            <form>
-                 <div class="form-row">
+            <form action="/admin/doctor/create" method="POST">
+                <input type="hidden" name="csrf_token"  value="{{csrf_token('authenticate')}}">
+                <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputNome">* NOME</label>
-                        <input type="text" name="nome" class="form-control" id="inputNome" placeholder="nome">
+                        <input type="text" name="nome" class="form-control" id="inputNome" placeholder="NOME" required>
                     </div>
-                     <div class="form-group col-md-6">
+                    <div class="form-group col-md-6">
                         <label for="inputPassword">* NOVA SENHA </label>
-                        <input type="password" name="passwd" class="form-control" id="inputPassword" placeholder="SENHA">
+                        <input type="password" name="passwd" class="form-control" id="inputPassword" placeholder="SENHA" required>
                     </div>
-                    
                 </div>
                 
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputRG">* RG</label>
-                        <input type="text" name="rg" class="form-control" id="inputRG" placeholder="RG">
+                        <input type="text" name="rg" class="form-control" id="inputRG" placeholder="RG" required>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputConfirmPassword">* CONFIRMA SENHA  </label>
-                        <input type="password" name"confirm_passwd" class="form-control" id="inputConfirmPassword" placeholder="CONFIRMAR SENHA">
+                        <label for="inputconfirmPasswd">* Confirm Password </label>
+                        <input type="password" name="confirmPasswd" class="form-control" id="inputconfirmPasswd" placeholder="password" required>
                     </div>
                 </div> 
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputCelular">* CELULAR</label>
-                        <input type="text" name="phone" class="form-control" id="inputCelular" placeholder="(41)99999 9999">
+                        <label for="inputCelular">* CELULAR </label>
+                        <input type="text" name="phone1" class="form-control" id="inputCelular" placeholder="(41)99999 9999" required>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputTelefone">* TELEFONE <small> (opcional)</small> </label>
-                        <input type="password" name"passwd" class="form-control" id="inputPassword4" placeholder="(41)3333-3333">
+                        <label for="inputTELEFONE">* TELEFONE <small style="color:blue"> opcional </small> </label>
+                        <input type="text" name="TELEFONE" class="form-control" id="inputTELEFONE" placeholder="(41)3333 6666">
                     </div>
                 </div> 
 
-                 <div class="form-row">                    
+                <div class="form-row">                    
                     <div class="form-group col-md-6">
-                        <label for="inputCRM">* CRM</label>
-                        <input type="text" name="crm" class="form-control" id="inputCRM" placeholder="CRM">
+                        <label for="inputCRM">* CRM </label>
+                        <input type="text" name="crm" class="form-control" id="inputCRM" placeholder="CRM" required >
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputCPf">* CPF</label>
-                        <input type="text" name="cpf" class="form-control" id="inputCPf" placeholder="CPF">
+                        <label for="inputCPf">* CPF </label>
+                        <input type="text" maxlength='11' name="cpf" class="form-control" id="inputCPf" placeholder="CPF" required>
                     </div>                   
                 </div>                                
                 <br>    
@@ -72,9 +73,8 @@
             </form>
         </div>
     </section>
-
  
-        {# <li>Your controller at <code><a href="{{ '/home/renanbrs/Saude-Medico/src/Controller/CadastrarMedicoController.php'|file_link(0) }}">src/Controller/CadastrarMedicoController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/renanbrs/Saude-Medico/templates/cadastrar_medico/index.html.twig'|file_link(0) }}">templates/cadastrar_medico/index.html.twig</a></code></li> #}
+    {# <li>Your controller at <code><a href="{{ '/home/renanbrs/Saude-Medico/src/Controller/CadastrarMedicoController.php'|file_link(0) }}">src/Controller/CadastrarMedicoController.php</a></code></li>
+    <li>Your template at <code><a href="{{ '/home/renanbrs/Saude-Medico/templates/cadastrar_medico/index.html.twig'|file_link(0) }}">templates/cadastrar_medico/index.html.twig</a></code></li> #}
      
 {% endblock %}

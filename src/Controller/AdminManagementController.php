@@ -12,8 +12,18 @@ class AdminManagementController extends AbstractController
      */
     public function index()
     {
-        return $this->render('admin_management/index.html.twig', [
-            'controller_name' => 'AdminManagementController',
-        ]);
+        try {
+            //code...
+            $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
+
+            // or add an optional message - seen by developers
+            $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN', null, 'User tried to access a page without having ROLE_ADMIN');
+            
+            return $this->render('admin_management/index.html.twig', [
+                'controller_name' => 'AdminManagementController',
+            ]);
+        } catch (\Throwable $th) {
+            throw $th;
+        }
     }
 }

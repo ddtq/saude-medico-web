@@ -4,7 +4,6 @@ namespace App\Security;
 
 use App\Entity\SuperUser;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\Form\RequestHandlerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;

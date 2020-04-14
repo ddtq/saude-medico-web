@@ -134,6 +134,7 @@ class ExceptionListener
 
     private function handleAccessDeniedException(ExceptionEvent $event, AccessDeniedException $exception)
     {
+        
         $event->setThrowable(new AccessDeniedHttpException($exception->getMessage(), $exception));
 
         $token = $this->tokenStorage->getToken();

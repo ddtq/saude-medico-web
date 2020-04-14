@@ -1250,7 +1250,8 @@
             "logging",
             "monolog",
             "productivity"
-        ]
+        ],
+        "abandoned": true
     },
     {
         "name": "egulias/email-validator",
@@ -6966,6 +6967,64 @@
             "MIT"
         ],
         "description": "A Twig pack for Symfony projects"
+    },
+    {
+        "name": "symfony/twilio-notifier",
+        "version": "v5.0.7",
+        "version_normalized": "5.0.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/twilio-notifier.git",
+            "reference": "e70bb62d19f5051f65e2471c1c2e2a1a086e7e2a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/twilio-notifier/zipball/e70bb62d19f5051f65e2471c1c2e2a1a086e7e2a",
+            "reference": "e70bb62d19f5051f65e2471c1c2e2a1a086e7e2a",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.2.5",
+            "symfony/http-client": "^4.3|^5.0",
+            "symfony/notifier": "~5.0.0"
+        },
+        "time": "2020-01-08T09:13:26+00:00",
+        "type": "symfony-bridge",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Notifier\\Bridge\\Twilio\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Twilio Notifier Bridge",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "notifier",
+            "sms",
+            "twilio"
+        ]
     },
     {
         "name": "symfony/validator",

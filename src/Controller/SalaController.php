@@ -15,10 +15,10 @@ class SalaController extends AbstractController
      */
     public function index(Request $request)
     { 
+        phpinfo();
+        // $response = $request->getContent();
 
-        $response = $request->getContent();
-
-        return $this->json( $response);
+        // return $this->json( $response);
 
  
         // return $this->render('sala/index.html.twig', [

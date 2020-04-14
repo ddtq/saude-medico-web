@@ -12,7 +12,7 @@ namespace PackageVersions;
  */
 final class Versions
 {
-    public const ROOT_PACKAGE_NAME = 'symfony/website-skeleton';
+    public const ROOT_PACKAGE_NAME = '__root__';
     public const VERSIONS          = array (
   'doctrine/annotations' => 'v1.8.0@904dca4eb10715b92569fbcd79e201d5c349b6bc',
   'doctrine/cache' => '1.10.0@382e7f4db9a12dc6c19431743a2b096041bcdd62',
@@ -98,6 +98,7 @@ final class Versions
   'symfony/twig-bridge' => 'v5.0.7@3a1ef6e7d25b040c9925e3507a7a9cd92d36d71b',
   'symfony/twig-bundle' => 'v5.0.7@6167dbac6f32961b7d19112a7531602f511bf500',
   'symfony/twig-pack' => 'v1.0.0@8b278ea4b61fba7c051f172aacae6d87ef4be0e0',
+  'symfony/twilio-notifier' => 'v5.0.7@e70bb62d19f5051f65e2471c1c2e2a1a086e7e2a',
   'symfony/validator' => 'v5.0.7@fc459a3d66bda9c0f8231a4d44dddd6daf23db92',
   'symfony/var-dumper' => 'v5.0.7@f74a126acd701392eef2492a17228d42552c86b5',
   'symfony/var-exporter' => 'v5.0.7@ffd29a70370e466343e33154b5df197a07a13afa',
@@ -120,14 +121,14 @@ final class Versions
   'symfony/profiler-pack' => 'v1.0.4@99c4370632c2a59bb0444852f92140074ef02209',
   'symfony/test-pack' => 'v1.0.6@ff87e800a67d06c423389f77b8209bc9dc469def',
   'symfony/web-profiler-bundle' => 'v5.0.7@635bf7fe86b67b0d3903a3013709fe028ac43b59',
-  'paragonie/random_compat' => '2.*@',
-  'symfony/polyfill-ctype' => '*@',
-  'symfony/polyfill-iconv' => '*@',
-  'symfony/polyfill-php72' => '*@',
-  'symfony/polyfill-php71' => '*@',
-  'symfony/polyfill-php70' => '*@',
-  'symfony/polyfill-php56' => '*@',
-  'symfony/website-skeleton' => 'v5.0.99@',
+  'paragonie/random_compat' => '2.*@7cf31312f5ed342d5b45899834e34a83d2e9d954',
+  'symfony/polyfill-ctype' => '*@7cf31312f5ed342d5b45899834e34a83d2e9d954',
+  'symfony/polyfill-iconv' => '*@7cf31312f5ed342d5b45899834e34a83d2e9d954',
+  'symfony/polyfill-php72' => '*@7cf31312f5ed342d5b45899834e34a83d2e9d954',
+  'symfony/polyfill-php71' => '*@7cf31312f5ed342d5b45899834e34a83d2e9d954',
+  'symfony/polyfill-php70' => '*@7cf31312f5ed342d5b45899834e34a83d2e9d954',
+  'symfony/polyfill-php56' => '*@7cf31312f5ed342d5b45899834e34a83d2e9d954',
+  '__root__' => 'dev-dev@7cf31312f5ed342d5b45899834e34a83d2e9d954',
 );
 
     private function __construct()

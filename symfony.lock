@@ -469,6 +469,9 @@
     "symfony/twig-pack": {
         "version": "v1.0.0"
     },
+    "symfony/twilio-notifier": {
+        "version": "v5.0.7"
+    },
     "symfony/validator": {
         "version": "4.3",
         "recipe": {

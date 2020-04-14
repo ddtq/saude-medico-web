@@ -68,6 +68,7 @@ class ComposerStaticInit6a06add22c49833bd6ea22b6021b108d
             'Symfony\\Component\\PropertyAccess\\' => 33,
             'Symfony\\Component\\Process\\' => 26,
             'Symfony\\Component\\OptionsResolver\\' => 34,
+            'Symfony\\Component\\Notifier\\Bridge\\Twilio\\' => 41,
             'Symfony\\Component\\Notifier\\' => 27,
             'Symfony\\Component\\Mime\\' => 23,
             'Symfony\\Component\\Mailer\\' => 25,
@@ -288,6 +289,10 @@ class ComposerStaticInit6a06add22c49833bd6ea22b6021b108d
         'Symfony\\Component\\OptionsResolver\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/options-resolver',
+        ),
+        'Symfony\\Component\\Notifier\\Bridge\\Twilio\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/twilio-notifier',
         ),
         'Symfony\\Component\\Notifier\\' => 
         array (

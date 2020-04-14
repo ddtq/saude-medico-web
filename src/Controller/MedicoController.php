@@ -8,11 +8,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class MedicoController extends AbstractController
 {
     /**
-     * @Route("/medico", name="medico")
+     * @Route("/saudemedico", name="medico")
      */
     public function index()
     {
-        return $this->render('medico/index.html.twig', [
+        // phpinfo();
+        return $this->render('login/index.html.twig', [
             'controller_name' => 'MedicoController',
         ]);
     }
