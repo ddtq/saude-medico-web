@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CadastrarMedicoController!{% endblock %}
+
+{% block body %}
+
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 100%; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div style="width:100%; height:auto;"> <a href="/admin/management" style="float:right; margin-right:12px;"> <u> Home </u> </a > </div>
+
+<div class="example-wrapper" >
+    <div style="display:flex; width:100%; height:auto; position:relative; top:-20px; " >
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Logo_PMPR_2.svg/800px-Logo_PMPR_2.svg.png" alt="Smiley face" height="70" width="60">
+    </div>
+</div>
+
+<section style="width:100%; height:auto; text-align:center;" align="center"> 
+    <div class="alert alert-primary" role="alert">
+        <span style="text-shadow: 1px 0px 2px blue; color:cian;" > Salvo com Sucesso ! </span> 
+    </div>
+</section>
+
+<br>
+
+<section style="width:100%; height:auto;" align="center"> 
+    <div style="width: 50%; margin:auto; text-align:center; height: auto; "> 
+        <span> <STRONG> NOME:  </STRONG> {{ medico.nome }} </span>
+        <br>
+        <br>
+        <span> <STRONG> RG:  </STRONG> {{ medico.rg }} </span>
+        <br>
+        <br>
+        <span> <STRONG> CPF:  </STRONG> {{ medico.cpf }} </span>
+        <br>
+        <br>
+        <span> <STRONG> CRM:  </STRONG> {{ medico.crm }} </span>
+        <br>
+        <br>
+        <span> <STRONG> PHONE1: </STRONG>  {{ medico.phone1 }} </span>
+        <br>
+        <br>
+        <span> <STRONG> PHONE2:  </STRONG> {{ medico.phone2 }} </span>
+        <br>
+        <br>
+        <span> <STRONG> SENHA: </STRONG>  {{ medico.passwd }}  </span>
+        <br>
+        <br>
+        <span> <STRONG> ATIVO:  </STRONG> {{ medico.ativo }} SIM </span>
+    </div>
+</section>
+
+<div style="width:100%; height:auto;"> <a href="/admin/management" style="float:left; margin-left:12px;"> <u> <i class="fas fa-plus-circle"></i> Novo cadastro. </u> </a > </div>
+
+ 
+{# <li>Your controller at <code><a href="{{ '/home/renanbrs/Saude-Medico/src/Controller/CadastrarMedicoController.php'|file_link(0) }}">src/Controller/CadastrarMedicoController.php</a></code></li>
+<li>Your template at <code><a href="{{ '/home/renanbrs/Saude-Medico/templates/cadastrar_medico/index.html.twig'|file_link(0) }}">templates/cadastrar_medico/index.html.twig</a></code></li> #}
+     
+{% endblock %}
