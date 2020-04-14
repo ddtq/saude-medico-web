@@ -8,7 +8,13 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div style="width:100%; height:auto;"> <a href="#" style="float:right; margin-right:12px;"> <u> Sair </u> </a > </div>
+<div class="mb-3" style="float:right; text-align:center; margin-right:20px;">
+    <span style="color:cian; font-size:12px;"> Você esta logado com CPF: <strong> <u> {{ app.user.username }} </strong> </u> </span> 
+    <br>
+    <a style="color:magenta;" href="/logout"> Sair </a>
+</div>
+
+{# <div style="width:100%; height:auto;"> <a href="#" style="float:right; margin-right:12px;"> <u> Sair </u> </a > </div> #}
 
 <div class="example-wrapper" >
     <div style="display:flex; width:100%; height:auto; position:relative; top:-30px; border-bottom: solid 1px lightgray; " >
