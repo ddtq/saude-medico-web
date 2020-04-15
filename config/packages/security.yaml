@@ -1,29 +1,40 @@
 security:
     encoders:
         App\Entity\SuperUser:
+            algorithm: auto 
+        App\Entity\Medico:
             algorithm: auto
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         # used to reload user from session & other features (e.g. switch_user)
+        chain_provider:
+             chain:
+                providers: [app_user_provider, app_medico_provider]
         app_user_provider:
             entity:
                 class: App\Entity\SuperUser
+                property: cpf
+        app_medico_provider:
+            entity:
+                class: App\Entity\Medico
                 property: cpf
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-        main:
+        admin_app_user_provider:
             anonymous: lazy
-            provider: app_user_provider
+            provider: chain_provider
             guard:
                 authenticators:
                     - App\Security\LoginFormAuthenticator # Uasado pelo Admin
+                    - App\Security\LoginFormAuthenticatorMedicoAuthenticator # Uasado pelo Medico
+                entry_point: App\Security\LoginFormAuthenticatorMedicoAuthenticator
             logout:
                 path: app_logout
                 # where to redirect after logout
-                target: app_login
+                target: app_login 
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
@@ -35,7 +46,7 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+        # - { path: ^/medico/access, roles: ROLE_USER }
         - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         # require ROLE_SUPER_ADMIN for ^/admin/login
         - { path: '^/admin/management', roles: ROLE_SUPER_ADMIN }

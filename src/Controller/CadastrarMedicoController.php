@@ -78,7 +78,7 @@ class CadastrarMedicoController extends AbstractController
                     $medico->setCrm($request->request->get('crm'));
                     $medico->setPhone1($request->request->get('phone1'));
                     $medico->setPhone2($request->request->get('TELEFONE'));
-                    $medico->setPasswd($request->request->get('passwd'));
+                    $medico->setPassword($request->request->get('passwd'));
                     $entityManager->persist($medico);
                     $entityManager->flush();
 

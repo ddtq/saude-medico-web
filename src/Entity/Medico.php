@@ -3,11 +3,13 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MedicoRepository")
  */
-class Medico
+class Medico implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -47,7 +49,8 @@ class Medico
     private $phone_2;
 
     /**
-     * @ORM\Column(type="string", length=25)
+     * @var string The hashed password
+     * @ORM\Column(type="string")
      */
     private $passwd;
 
@@ -55,6 +58,11 @@ class Medico
      * @ORM\Column(type="boolean")
      */
     private $ativo;
+
+    /**
+     * @ORM\Column(type="json")
+     */
+    private $roles = [];
 
     public function getId(): ?int
     {
@@ -133,12 +141,15 @@ class Medico
         return $this;
     }
 
-    public function getPasswd(): ?string
+    /**
+     * @see UserInterface
+     */
+    public function getPassword(): ?string
     {
         return $this->passwd;
     }
 
-    public function setPasswd(string $passwd): self
+    public function setPassword(string $passwd): self
     {
         $this->passwd = $passwd;
 
@@ -155,5 +166,44 @@ class Medico
         $this->ativo = $ativo;
 
         return $this;
+    }
+
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUsername(): string
+    {
+        return (string) $this->cpf;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
+    {
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getSalt()
+    {
+        // not needed when using the "bcrypt" algorithm in security.yaml
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 }

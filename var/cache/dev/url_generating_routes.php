@@ -22,9 +22,12 @@ return [
     'admin_disableDoctor' => [[], ['_controller' => 'App\\Controller\\EditarCadastroMedicoController::desabilityDoctor'], [], [['text', '/admin/disableDoctor']], [], []],
     'admin_edit_user' => [[], ['_controller' => 'App\\Controller\\EditarCadastroMedicoController::edit'], [], [['text', '/admin/cadastro/edit/user']], [], []],
     'admin_update_user' => [[], ['_controller' => 'App\\Controller\\EditarCadastroMedicoController::update'], [], [['text', '/admin/cadastro/update/user']], [], []],
+    'management_medico' => [[], ['_controller' => 'App\\Controller\\ManagementMedicoController::index'], [], [['text', '/medico/management/medico']], [], []],
     'medico' => [[], ['_controller' => 'App\\Controller\\MedicoController::index'], [], [['text', '/saudemedico']], [], []],
     'sala' => [[], ['_controller' => 'App\\Controller\\SalaController::index'], [], [['text', '/sala']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/admin/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
+    'app_medico_access' => [[], ['_controller' => 'App\\Controller\\SecurityControllerMedicoController::login'], [], [['text', '/medico/access']], [], []],
+    'app_medico_logout' => [[], ['_controller' => 'App\\Controller\\SecurityControllerMedicoController::logout'], [], [['text', '/medico/logout']], [], []],
     'send_link_sms' => [[], ['_controller' => 'App\\Controller\\SendLinkSmsController::loginSuccess'], [], [['text', '/send/link/sms']], [], []],
 ];
