@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ManagementMedicoController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper {   margin-top: -1px; width: 100%; height:auto;}
+    .example-wrapper code { background: white; padding: 2px 6px; }
+    .grid-container {
+    max-width:300px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    }
+    .grid-item {
+    background-color: #5e81ac;
+    border-radius:2px;
+    margin-right: 10px;
+    padding: 22px;
+    font-size: 20px;
+    text-align: center;
+    box-shadow: 0px 2px 4px #434c5e;
+    }
+</style>
+
+<div class="mb-3" style="float:right; text-align:center; margin-right:20px;">
+    <i style="font-size: 18px;" class="far fa-user-circle"></i> <br>
+    <span style="color:cian; font-size:12px;"> Você esta logado: <strong>   </strong>  </span> 
+    <br>
+    <a style="color:#034F84;" href="/logout"> Sair </a>
+    <br> <hr>  
+    <i style="font-size: 18px;" class="fas fa-unlock-alt"></i> <br>
+    <a  href="#" style="color:#034F84;"> Alterar senha. </a> 
+</div>
+
+<div class="example-wrapper" >
+    <div style=" width:8%; height:auto; margin-top:25px;  margin-left:25px; " align="center">
+        <img style=" " src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Logo_PMPR_2.svg/800px-Logo_PMPR_2.svg.png" alt="Smiley face" height="100" width="90">
+    </div>
+</div>
+
+<br> <br> <br> <br>
+<br> <br>  
+
+<section style="width:100%; height:auto;">
+    <div style="width:40%; height:auto; margin:auto;" align="center">
+
+        <hr>
+        <div class="grid-container">
+            <div class="grid-item"> <i style="font-size: 40px;" class="fas fa-lungs-virus"></i> <hr> <a href="#" style="font-size:12px; color:whitesmoke;"> Pacientes. </a> </div>
+            <div class="grid-item"> <i style="font-size: 40px;" class="fas fa-chart-line"></i> <hr> <a  href="#" style="font-size:12px; color:whitesmoke;"> Gerênciar. </a> </div>
+            <div class="grid-item"> <i style="font-size: 40px;" class="fas fa-house-user"></i><hr> <a  href="#" style="font-size:12px; color:whitesmoke;"> Atestados. </a> </div>
+        </div> 
+        <hr>
+
+        {# <ul>
+            <li>Your controller at <code><a href="{{ '/home/renanbrs/Saude-Medico/src/Controller/ManagementMedicoController.php'|file_link(0) }}">src/Controller/ManagementMedicoController.php</a></code></li>
+            <li>Your template at <code><a href="{{ '/home/renanbrs/Saude-Medico/templates/management_medico/index.html.twig'|file_link(0) }}">templates/management_medico/index.html.twig</a></code></li>
+        </ul> #}
+    </div>
+</section>
+{% endblock %}
