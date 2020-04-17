@@ -78,16 +78,23 @@ class LoginFormAuthenticatorMedicoAuthenticator extends AbstractFormLoginAuthent
             // fail authentication with a custom error
             // var_dump($user);
             // die();
-            throw new CustomUserMessageAuthenticationException('CPF não encontrado !');
+            throw new CustomUserMessageAuthenticationException('CPF Incorreto !');
         }
         // var_dump($user);
         // die();
-        // return $user;
+        return $user;
     }
 
     public function checkCredentials($credentials, UserInterface $user)
     {
-        return $this->passwordEncoder->isPasswordValid($user, $credentials['password']);
+        if($user->getPassword() == $credentials['password']){
+            // var_dump($resp);
+            // die();
+            return true;
+        }else{
+            // return true;
+            throw new CustomUserMessageAuthenticationException('Senha incorreta !');
+        };
     }
 
     /**
@@ -101,15 +108,16 @@ class LoginFormAuthenticatorMedicoAuthenticator extends AbstractFormLoginAuthent
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
     {
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
-            return new RedirectResponse('/medico/management/medico');
+            return new RedirectResponse('/medico/management');
         }
-        return new RedirectResponse('/medico/management/medico');
+        return new RedirectResponse('/medico/management');
         // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
         throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 
     protected function getLoginUrl()
     {
-        return $this->urlGenerator->generate('management_medico');
+        // return true;
+        return $this->urlGenerator->generate('app_medico_access');
     }
 }
