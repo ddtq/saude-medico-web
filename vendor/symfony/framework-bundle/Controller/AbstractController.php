@@ -315,8 +315,7 @@ abstract class AbstractController implements ServiceSubscriberInterface
         if (!class_exists(AccessDeniedException::class)) {
             throw new \LogicException('You can not use the "createAccessDeniedException" method if the Security component is not available. Try running "composer require symfony/security-bundle".');
         }
-
-        return new AccessDeniedException($message, $previous);
+        return new AccessDeniedException("uuuuuuuiiiiii", $previous);
     }
 
     /**
@@ -372,7 +371,6 @@ abstract class AbstractController implements ServiceSubscriberInterface
             // e.g. anonymous authentication
             return null;
         }
-
         return $user;
     }
 

@@ -22,7 +22,7 @@ return [
     'admin_disableDoctor' => [[], ['_controller' => 'App\\Controller\\EditarCadastroMedicoController::desabilityDoctor'], [], [['text', '/admin/disableDoctor']], [], []],
     'admin_edit_user' => [[], ['_controller' => 'App\\Controller\\EditarCadastroMedicoController::edit'], [], [['text', '/admin/cadastro/edit/user']], [], []],
     'admin_update_user' => [[], ['_controller' => 'App\\Controller\\EditarCadastroMedicoController::update'], [], [['text', '/admin/cadastro/update/user']], [], []],
-    'management_medico' => [[], ['_controller' => 'App\\Controller\\ManagementMedicoController::index'], [], [['text', '/medico/management/medico']], [], []],
+    'management_medico' => [[], ['_controller' => 'App\\Controller\\ManagementMedicoController::index'], [], [['text', '/medico/management']], [], []],
     'medico' => [[], ['_controller' => 'App\\Controller\\MedicoController::index'], [], [['text', '/saudemedico']], [], []],
     'sala' => [[], ['_controller' => 'App\\Controller\\SalaController::index'], [], [['text', '/sala']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/admin/login']], [], []],

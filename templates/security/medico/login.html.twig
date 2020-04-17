@@ -21,7 +21,7 @@
     <br>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Logo_PMPR_2.svg/800px-Logo_PMPR_2.svg.png" alt="Smiley face" height="160" width="140">
     <br>  <br>
-    <form action="{{ path('app_medico_access') }}" method="POST">
+    <form  method="POST">
         {% if error %}
             <div class="alert alert-danger"> {{error.messageKey|trans(error.messageData, 'security')}} </div>
         {% endif %}

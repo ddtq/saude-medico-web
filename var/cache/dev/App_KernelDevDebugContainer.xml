@@ -4011,8 +4011,8 @@
     </service>
     <service id="security.authentication.manager" class="Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager" public="false">
       <argument type="iterator">
-        <argument type="service" id="security.authentication.provider.guard.admin_app_user_provider"/>
-        <argument type="service" id="security.authentication.provider.anonymous.admin_app_user_provider"/>
+        <argument type="service" id="security.authentication.provider.guard.main"/>
+        <argument type="service" id="security.authentication.provider.anonymous.main"/>
       </argument>
       <argument>true</argument>
       <call method="setEventDispatcher">
@@ -4082,10 +4082,10 @@
       <argument type="service" id="security.role_hierarchy" on-invalid="null"/>
     </service>
     <service id="security.firewall.map" class="Symfony\Bundle\SecurityBundle\Security\FirewallMap" public="false">
-      <argument type="service" id=".service_locator.b7ZDoWY"/>
+      <argument type="service" id=".service_locator.iuGr.fa"/>
       <argument type="iterator">
         <argument key="security.firewall.map.context.dev" type="service" id=".security.request_matcher.Iy.T22O"/>
-        <argument key="security.firewall.map.context.admin_app_user_provider">null</argument>
+        <argument key="security.firewall.map.context.main">null</argument>
       </argument>
     </service>
     <service id="security.firewall.context" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext" public="false" abstract="true">
@@ -4120,12 +4120,12 @@
       <argument type="service" id="router.default" on-invalid="null"/>
       <argument type="service" id="security.token_storage"/>
       <call method="registerListener">
-        <argument>admin_app_user_provider</argument>
+        <argument>main</argument>
         <argument>app_logout</argument>
         <argument>logout</argument>
         <argument>_csrf_token</argument>
         <argument>null</argument>
-        <argument>null</argument>
+        <argument>main</argument>
       </call>
     </service>
     <service id="security.user.provider.missing" class="Symfony\Component\Security\Core\User\MissingUserProvider" public="false" abstract="true">
@@ -4210,6 +4210,20 @@
         </argument>
         <argument>null</argument>
       </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.6Y7BqyA"/>
+        <argument type="collection">
+          <argument>ROLE_USER_MEDICO</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.daDT2hL"/>
+        <argument type="collection">
+          <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
     </service>
     <service id="security.context_listener" class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
       <tag name="monolog.logger" channel="security"/>
@@ -4217,7 +4231,7 @@
       <argument type="iterator">
         <argument type="service" id="security.user.provider.concrete.chain_provider"/>
         <argument type="service" id="security.user.provider.concrete.app_user_provider"/>
-        <argument type="service" id="security.user.provider.concrete.app_medico_provider"/>
+        <argument type="service" id="security.user.provider.concrete.medico_app_user_provider"/>
       </argument>
       <argument></argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
@@ -4483,7 +4497,7 @@
     <service id="security.user.provider.concrete.chain_provider" class="Symfony\Component\Security\Core\User\ChainUserProvider" public="false">
       <argument type="iterator">
         <argument type="service" id="security.user.provider.concrete.app_user_provider"/>
-        <argument type="service" id="security.user.provider.concrete.app_medico_provider"/>
+        <argument type="service" id="security.user.provider.concrete.medico_app_user_provider"/>
       </argument>
     </service>
     <service id="security.user.provider.concrete.app_user_provider" class="Symfony\Bridge\Doctrine\Security\User\EntityUserProvider" public="false">
@@ -4492,7 +4506,7 @@
       <argument>cpf</argument>
       <argument>null</argument>
     </service>
-    <service id="security.user.provider.concrete.app_medico_provider" class="Symfony\Bridge\Doctrine\Security\User\EntityUserProvider" public="false">
+    <service id="security.user.provider.concrete.medico_app_user_provider" class="Symfony\Bridge\Doctrine\Security\User\EntityUserProvider" public="false">
       <argument type="service" id="doctrine"/>
       <argument>App\Entity\Medico</argument>
       <argument>cpf</argument>
@@ -4521,14 +4535,14 @@
       <argument>null</argument>
       <argument type="service" id="security.firewall.map.config.dev"/>
     </service>
-    <service id="security.firewall.map.config.admin_app_user_provider" class="Symfony\Bundle\SecurityBundle\Security\FirewallConfig" public="false">
-      <argument>admin_app_user_provider</argument>
+    <service id="security.firewall.map.config.main" class="Symfony\Bundle\SecurityBundle\Security\FirewallConfig" public="false">
+      <argument>main</argument>
       <argument>security.user_checker</argument>
       <argument>null</argument>
       <argument>true</argument>
       <argument>false</argument>
       <argument>security.user.provider.concrete.chain_provider</argument>
-      <argument>admin_app_user_provider</argument>
+      <argument>main</argument>
       <argument>App\Security\LoginFormAuthenticatorMedicoAuthenticator</argument>
       <argument>null</argument>
       <argument>null</argument>
@@ -4543,9 +4557,9 @@
       <argument type="iterator">
         <argument type="service" id="security.user.provider.concrete.chain_provider"/>
         <argument type="service" id="security.user.provider.concrete.app_user_provider"/>
-        <argument type="service" id="security.user.provider.concrete.app_medico_provider"/>
+        <argument type="service" id="security.user.provider.concrete.medico_app_user_provider"/>
       </argument>
-      <argument>admin_app_user_provider</argument>
+      <argument>main</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="debug.event_dispatcher" on-invalid="null"/>
       <argument type="service" id="security.authentication.trust_resolver"/>
@@ -4554,10 +4568,10 @@
         <argument>enableUsageTracking</argument>
       </argument>
     </service>
-    <service id="security.logout_listener.admin_app_user_provider" class="Symfony\Component\Security\Http\Firewall\LogoutListener" public="false">
+    <service id="security.logout_listener.main" class="Symfony\Component\Security\Http\Firewall\LogoutListener" public="false">
       <argument type="service" id="security.token_storage"/>
       <argument type="service" id="security.http_utils"/>
-      <argument type="service" id="security.logout.success_handler.admin_app_user_provider"/>
+      <argument type="service" id="security.logout.success_handler.main"/>
       <argument type="collection">
         <argument key="csrf_parameter">_csrf_token</argument>
         <argument key="csrf_token_id">logout</argument>
@@ -4570,69 +4584,69 @@
         <argument type="service" id="security.logout.handler.session"/>
       </call>
     </service>
-    <service id="security.logout.success_handler.admin_app_user_provider" class="Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler" public="false">
+    <service id="security.logout.success_handler.main" class="Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler" public="false">
       <argument type="service" id="security.http_utils"/>
       <argument>app_login</argument>
     </service>
-    <service id="security.authentication.provider.guard.admin_app_user_provider" class="Symfony\Component\Security\Guard\Provider\GuardAuthenticationProvider" public="false">
+    <service id="security.authentication.provider.guard.main" class="Symfony\Component\Security\Guard\Provider\GuardAuthenticationProvider" public="false">
       <argument type="iterator">
         <argument type="service" id="App\Security\LoginFormAuthenticator"/>
         <argument type="service" id="App\Security\LoginFormAuthenticatorMedicoAuthenticator"/>
       </argument>
       <argument type="service" id="security.user.provider.concrete.chain_provider"/>
-      <argument>admin_app_user_provider</argument>
+      <argument>main</argument>
       <argument type="service" id="security.user_checker"/>
       <argument type="service" id="security.user_password_encoder.generic"/>
     </service>
-    <service id="security.authentication.listener.guard.admin_app_user_provider" class="Symfony\Component\Security\Guard\Firewall\GuardAuthenticationListener" public="false">
-      <tag name="security.remember_me_aware" id="admin_app_user_provider" provider="security.user.provider.concrete.chain_provider"/>
+    <service id="security.authentication.listener.guard.main" class="Symfony\Component\Security\Guard\Firewall\GuardAuthenticationListener" public="false">
+      <tag name="security.remember_me_aware" id="main" provider="security.user.provider.concrete.chain_provider"/>
       <argument type="service" id="security.authentication.guard_handler"/>
       <argument type="service" id="security.authentication.manager"/>
-      <argument>admin_app_user_provider</argument>
+      <argument>main</argument>
       <argument type="iterator">
         <argument type="service" id="App\Security\LoginFormAuthenticator"/>
         <argument type="service" id="App\Security\LoginFormAuthenticatorMedicoAuthenticator"/>
       </argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
     </service>
-    <service id="security.authentication.listener.anonymous.admin_app_user_provider" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
+    <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.untracked_token_storage"/>
       <argument>%container.build_hash%</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
-    <service id="security.authentication.provider.anonymous.admin_app_user_provider" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
+    <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
       <argument>%container.build_hash%</argument>
     </service>
-    <service id="security.exception_listener.admin_app_user_provider" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
+    <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
       <argument type="service" id="security.authentication.trust_resolver"/>
       <argument type="service" id="security.http_utils"/>
-      <argument>admin_app_user_provider</argument>
+      <argument>main</argument>
       <argument type="service" id="App\Security\LoginFormAuthenticatorMedicoAuthenticator"/>
       <argument>null</argument>
       <argument>null</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument>false</argument>
     </service>
-    <service id="security.firewall.map.context.admin_app_user_provider" class="Symfony\Bundle\SecurityBundle\Security\LazyFirewallContext" public="false">
+    <service id="security.firewall.map.context.main" class="Symfony\Bundle\SecurityBundle\Security\LazyFirewallContext" public="false">
       <argument type="iterator">
         <argument type="service" id="security.channel_listener"/>
         <argument type="service" id="security.context_listener.0"/>
-        <argument type="service" id="security.authentication.listener.guard.admin_app_user_provider"/>
-        <argument type="service" id="security.authentication.listener.anonymous.admin_app_user_provider"/>
+        <argument type="service" id="security.authentication.listener.guard.main"/>
+        <argument type="service" id="security.authentication.listener.anonymous.main"/>
         <argument type="service" id="security.access_listener"/>
       </argument>
-      <argument type="service" id="security.exception_listener.admin_app_user_provider"/>
-      <argument type="service" id="security.logout_listener.admin_app_user_provider"/>
-      <argument type="service" id="security.firewall.map.config.admin_app_user_provider"/>
+      <argument type="service" id="security.exception_listener.main"/>
+      <argument type="service" id="security.logout_listener.main"/>
+      <argument type="service" id="security.firewall.map.config.main"/>
       <argument type="service" id="security.untracked_token_storage"/>
     </service>
-    <service id=".service_locator.b7ZDoWY" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.iuGr.fa" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="security.firewall.map.context.admin_app_user_provider" type="service" id="security.firewall.map.context.admin_app_user_provider"/>
         <argument key="security.firewall.map.context.dev" type="service" id="security.firewall.map.context.dev"/>
+        <argument key="security.firewall.map.context.main" type="service" id="security.firewall.map.context.main"/>
       </argument>
     </service>
     <service id=".security.request_matcher.eKXDm4f" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
@@ -4646,6 +4660,12 @@
     </service>
     <service id=".security.request_matcher.hM829.q" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
       <argument>^/editar/cadastro/medico/modify</argument>
+    </service>
+    <service id=".security.request_matcher.6Y7BqyA" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/medico/management</argument>
+    </service>
+    <service id=".security.request_matcher.daDT2hL" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/medico/management$</argument>
     </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand" public="false">
       <tag name="console.command" command="security:encode-password"/>
@@ -5886,8 +5906,8 @@
     <service id="Symfony\Component\Security\Http\HttpUtils" alias="security.http_utils" public="false"/>
     <service id="Symfony\Component\Security\Guard\GuardAuthenticatorHandler" alias="security.authentication.guard_handler" public="false"/>
     <service id="security.firewall" alias="debug.security.firewall" public="false"/>
-    <service id="security.authentication.session_strategy.admin_app_user_provider" alias="security.authentication.session_strategy"/>
-    <service id="security.user_checker.admin_app_user_provider" alias="security.user_checker" public="false"/>
+    <service id="security.authentication.session_strategy.main" alias="security.authentication.session_strategy"/>
+    <service id="security.user_checker.main" alias="security.user_checker" public="false"/>
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker" public="false"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>

@@ -20,7 +20,7 @@ return [
         '/admin/disableDoctor' => [[['_route' => 'admin_disableDoctor', '_controller' => 'App\\Controller\\EditarCadastroMedicoController::desabilityDoctor'], null, null, null, false, false, null]],
         '/admin/cadastro/edit/user' => [[['_route' => 'admin_edit_user', '_controller' => 'App\\Controller\\EditarCadastroMedicoController::edit'], null, null, null, false, false, null]],
         '/admin/cadastro/update/user' => [[['_route' => 'admin_update_user', '_controller' => 'App\\Controller\\EditarCadastroMedicoController::update'], null, null, null, false, false, null]],
-        '/medico/management/medico' => [[['_route' => 'management_medico', '_controller' => 'App\\Controller\\ManagementMedicoController::index'], null, null, null, false, false, null]],
+        '/medico/management' => [[['_route' => 'management_medico', '_controller' => 'App\\Controller\\ManagementMedicoController::index'], null, null, null, false, false, null]],
         '/saudemedico' => [[['_route' => 'medico', '_controller' => 'App\\Controller\\MedicoController::index'], null, null, null, false, false, null]],
         '/sala' => [[['_route' => 'sala', '_controller' => 'App\\Controller\\SalaController::index'], null, null, null, false, false, null]],
         '/admin/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],

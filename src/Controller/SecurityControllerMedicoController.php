@@ -6,6 +6,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\HttpFoundation\Cookie;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class SecurityControllerMedicoController extends AbstractController
 {
@@ -25,8 +29,17 @@ class SecurityControllerMedicoController extends AbstractController
     /**
      * @Route("/medico/logout", name="app_medico_logout")
      */
-    public function logout()
+    public function logout(Request $request)
     {
-        throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
+        $response = new Response;
+        foreach ($request->cookies as $cookiename => $value) {
+            # code...
+            $response->headers->clearCookie($cookiename);
+            // echo $cookiename;
+        }
+        $session = new Session;
+        $response = new Response;
+        $session->clear();
+        return $this->redirectToRoute('app_medico_access');
     }
 }
