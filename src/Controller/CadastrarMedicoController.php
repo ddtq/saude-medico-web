@@ -69,6 +69,7 @@ class CadastrarMedicoController extends AbstractController
             if( $request->request->get('passwd') === $request->request->get('confirmPasswd') ){
                 try {
                     //code...
+                    $role = ['ROLE_USER_MEDICO'];
                     $entityManager = $this->getDoctrine()->getManager();
                     $medico = new Medico();
                     $medico->setAtivo(true);
@@ -79,6 +80,7 @@ class CadastrarMedicoController extends AbstractController
                     $medico->setPhone1($request->request->get('phone1'));
                     $medico->setPhone2($request->request->get('TELEFONE'));
                     $medico->setPassword($request->request->get('passwd'));
+                    $medico->setRoles($role);
                     $entityManager->persist($medico);
                     $entityManager->flush();
 
