@@ -313,6 +313,13 @@
         <argument type="service" id=".service_locator.pNNo5z3.App\Controller\AdminManagementController"/>
       </call>
     </service>
+    <service id="App\Controller\BuscaPacienteTriagemController" class="App\Controller\BuscaPacienteTriagemController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.pNNo5z3.App\Controller\BuscaPacienteTriagemController"/>
+      </call>
+    </service>
     <service id="App\Controller\CadastrarMedicoController" class="App\Controller\CadastrarMedicoController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -327,6 +334,20 @@
         <argument type="service" id=".service_locator.pNNo5z3.App\Controller\EditarCadastroMedicoController"/>
       </call>
     </service>
+    <service id="App\Controller\EmitirAtestadoAfastamentoController" class="App\Controller\EmitirAtestadoAfastamentoController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.pNNo5z3.App\Controller\EmitirAtestadoAfastamentoController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ListAtestadosController" class="App\Controller\ListAtestadosController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.pNNo5z3.App\Controller\ListAtestadosController"/>
+      </call>
+    </service>
     <service id="App\Controller\ManagementMedicoController" class="App\Controller\ManagementMedicoController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -339,6 +360,20 @@
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.pNNo5z3.App\Controller\MedicoController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ObtainRowCosultasController" class="App\Controller\ObtainRowCosultasController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.pNNo5z3.App\Controller\ObtainRowCosultasController"/>
+      </call>
+    </service>
+    <service id="App\Controller\RegistrarProntuarioController" class="App\Controller\RegistrarProntuarioController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.pNNo5z3.App\Controller\RegistrarProntuarioController"/>
       </call>
     </service>
     <service id="App\Controller\SalaController" class="App\Controller\SalaController" public="true" autowire="true" autoconfigure="true">
@@ -4795,18 +4830,33 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AdminManagementController" class="App\Controller\AdminManagementController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AdminManagementController" class="App\Controller\AdminManagementController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AdminManagementController" class="App\Controller\AdminManagementController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\BuscaPacienteTriagemController" class="App\Controller\BuscaPacienteTriagemController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\BuscaPacienteTriagemController" class="App\Controller\BuscaPacienteTriagemController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\BuscaPacienteTriagemController" class="App\Controller\BuscaPacienteTriagemController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CadastrarMedicoController" class="App\Controller\CadastrarMedicoController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CadastrarMedicoController" class="App\Controller\CadastrarMedicoController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\CadastrarMedicoController" class="App\Controller\CadastrarMedicoController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\EditarCadastroMedicoController" class="App\Controller\EditarCadastroMedicoController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\EditarCadastroMedicoController" class="App\Controller\EditarCadastroMedicoController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\EditarCadastroMedicoController" class="App\Controller\EditarCadastroMedicoController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\EmitirAtestadoAfastamentoController" class="App\Controller\EmitirAtestadoAfastamentoController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\EmitirAtestadoAfastamentoController" class="App\Controller\EmitirAtestadoAfastamentoController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\EmitirAtestadoAfastamentoController" class="App\Controller\EmitirAtestadoAfastamentoController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ListAtestadosController" class="App\Controller\ListAtestadosController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ListAtestadosController" class="App\Controller\ListAtestadosController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ListAtestadosController" class="App\Controller\ListAtestadosController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ManagementMedicoController" class="App\Controller\ManagementMedicoController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ManagementMedicoController" class="App\Controller\ManagementMedicoController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ManagementMedicoController" class="App\Controller\ManagementMedicoController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MedicoController" class="App\Controller\MedicoController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MedicoController" class="App\Controller\MedicoController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\MedicoController" class="App\Controller\MedicoController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ObtainRowCosultasController" class="App\Controller\ObtainRowCosultasController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ObtainRowCosultasController" class="App\Controller\ObtainRowCosultasController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ObtainRowCosultasController" class="App\Controller\ObtainRowCosultasController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RegistrarProntuarioController" class="App\Controller\RegistrarProntuarioController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RegistrarProntuarioController" class="App\Controller\RegistrarProntuarioController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\RegistrarProntuarioController" class="App\Controller\RegistrarProntuarioController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SalaController" class="App\Controller\SalaController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SalaController" class="App\Controller\SalaController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SalaController" class="App\Controller\SalaController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5348,6 +5398,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.pNNo5z3" method="withContext"/>
     </service>
+    <service id=".service_locator.pNNo5z3.App\Controller\BuscaPacienteTriagemController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\BuscaPacienteTriagemController"/>
+      <argument>App\Controller\BuscaPacienteTriagemController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.pNNo5z3" method="withContext"/>
+    </service>
     <service id=".service_locator.pNNo5z3.App\Controller\CadastrarMedicoController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\CadastrarMedicoController"/>
       <argument>App\Controller\CadastrarMedicoController</argument>
@@ -5360,6 +5416,18 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.pNNo5z3" method="withContext"/>
     </service>
+    <service id=".service_locator.pNNo5z3.App\Controller\EmitirAtestadoAfastamentoController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\EmitirAtestadoAfastamentoController"/>
+      <argument>App\Controller\EmitirAtestadoAfastamentoController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.pNNo5z3" method="withContext"/>
+    </service>
+    <service id=".service_locator.pNNo5z3.App\Controller\ListAtestadosController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\ListAtestadosController"/>
+      <argument>App\Controller\ListAtestadosController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.pNNo5z3" method="withContext"/>
+    </service>
     <service id=".service_locator.pNNo5z3.App\Controller\ManagementMedicoController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\ManagementMedicoController"/>
       <argument>App\Controller\ManagementMedicoController</argument>
@@ -5369,6 +5437,18 @@
     <service id=".service_locator.pNNo5z3.App\Controller\MedicoController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\MedicoController"/>
       <argument>App\Controller\MedicoController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.pNNo5z3" method="withContext"/>
+    </service>
+    <service id=".service_locator.pNNo5z3.App\Controller\ObtainRowCosultasController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\ObtainRowCosultasController"/>
+      <argument>App\Controller\ObtainRowCosultasController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.pNNo5z3" method="withContext"/>
+    </service>
+    <service id=".service_locator.pNNo5z3.App\Controller\RegistrarProntuarioController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\RegistrarProntuarioController"/>
+      <argument>App\Controller\RegistrarProntuarioController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.pNNo5z3" method="withContext"/>
     </service>

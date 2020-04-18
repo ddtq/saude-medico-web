@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ListAtestadosController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper {   margin-top: -1px; width: 100%; height:auto;}
+    .example-wrapper code { background: white; padding: 2px 6px; }
+</style>
+
+<div class="mb-3" style="float:right; text-align:center; padding-top: 15px; margin-right:20px; ">
+    <i style="color:cian; font-size:14px;" class="fa fa-home"></i> <br>
+    <a href="/medico/management" style="color:cian; font-size:12px;"> <strong> Home </strong> </a > 
+</div>
+
+<div class="example-wrapper" style="background:white; height: 80px;" >
+    <div style=" width:8%; height:auto; padding-top:8px;  margin-left:25px; " align="center">
+        <img style=" " src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Logo_PMPR_2.svg/800px-Logo_PMPR_2.svg.png" alt="Smiley face" height="70" width="60">
+    </div>
+</div>
+
+<br>
+
+<h1 style="font-family: 'Manrope', sans-serif; color:#4c566a; margin-left:25px;"> Militares de atestado. </h1>
+
+<br>
+
+{# Body #}
+<section style="width:100%; height:480px;"> 
+    <div style="width:100%; height: auto; " align="center"> 
+        <table class="table" style="width: 98%; height: auto; ">
+            <thead  align="center">
+                <tr>
+                <th scope="col">ID</th>
+                <th scope="col">NOME</th>
+                <th scope="col">RG</th>
+                <th scope="col">MOTIVO </th>
+                <th scope="col">PERÍODO</th>
+                <th scope="col">PRONTUÁRIO</th>
+                </tr>
+            </thead>
+            <tbody  align="center">
+                <tr>
+                    <th scope="row">1</th>
+                    <td>MaJoão Miguel Otto Maria Gabriel </td>
+                    <td> 252558588 </td>
+                    <td>  Preguiça  </td>
+                    <td> 10/01/2020 á fim da carreira. </td>
+                    <td> <button type="button" class="btn btn-primary">Acessar</button> </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Enzo Gabriel Otto</td>
+                    <td>649498498489</td>
+                    <td> Preguiça</td>
+                    <td>10/01/2020 á fim da carreira.</td>
+                    <td><button type="button" class="btn btn-primary">Acessar</button></td>
+                </tr>
+
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Maria Cecilia Otto</td>
+                    <td>654894899</td>
+                    <td> Preguiça</td>
+                    <td>10/01/2020 á fim da carreira.</td>
+                    <td><button type="button" class="btn btn-primary">Acessar</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+    </div>
+</section>
+
+<section style="width:100%; height:auto;">
+    <div style="width:100%; height:70px; background:white; position:absolute; bottom:0px; "> 
+        <div style=" display:inline-block; width:8%; height:auto;  padding-top: 6px; margin-left:25px; " align="center">
+            <img style=" " src="https://www.pikpng.com/pngl/m/204-2047354_doctor-icon-medicina-png-animado-clipart.png" alt="Smiley face" height="54" width="50">
+        </div>
+
+        <div align="center" style="width:110px; height:auto; padding-top:8px; float:right; margin-right: 40px; display:inline-block;">
+            <i style="font-size: 15px; color:#afafaf; " class="fas fa-unlock-alt"></i> <br>
+            <a  href="#" style="color:#034F84; font-size:12px; color:magenta;"> <strong> <u> Alterar senha. </strong> </u> </a>
+        </div>
+
+        <div align="center" style="width:110px; height:auto; padding-top:12px; float:right; margin-right: 40px; display:inline-block;">
+            <i style="font-size: 15px; color:#afafaf; " class="fas fa-phone-alt"> HPM </i> <br>
+            <span  style="color:#034F84; font-size:12px; ">  (41)3333 3333.  </span>
+        </div>
+    </div>
+</section>
+
+
+    {# <ul>
+        <li>Your controller at <code><a href="{{ '/home/renanbrs/Saude-Medico/src/Controller/ListAtestadosController.php'|file_link(0) }}">src/Controller/ListAtestadosController.php</a></code></li>
+        <li>Your template at <code><a href="{{ '/home/renanbrs/Saude-Medico/templates/list_atestados/index.html.twig'|file_link(0) }}">templates/list_atestados/index.html.twig</a></code></li>
+    </ul> #}
+{% endblock %}

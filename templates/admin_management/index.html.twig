@@ -4,29 +4,29 @@
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 100%; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .example-wrapper {   margin-top: -1px; width: 100%; height:auto;}
+    .example-wrapper code { background: white; padding: 2px 6px; }
 </style>
 
-<div class="mb-3" style="float:right; text-align:center; margin-right:20px;">
+<div class="mb-3" style="float:right; text-align:center; margin-right:20px; ">
+    <i style="font-size: 18px;" class="far fa-user-circle"></i> <br>
+    <span style="color:cian; font-size:12px;"> Você esta logado: <strong style="color:blue;">  ✅ </strong>  </span> 
+    <br>
     <span style="color:cian; font-size:12px;"> Você esta logado com CPF: <strong> <u> {{ app.user.username }} </strong> </u> </span> 
     <br>
-    <a style="color:magenta;" href="/logout"> Sair </a>
+    <a style="color: magenta;" href="/logout"> Sair </a>
 </div>
 
-{# <div style="width:100%; height:auto;"> <a href="#" style="float:right; margin-right:12px;"> <u> Sair </u> </a > </div> #}
-
-<div class="example-wrapper" >
-    <div style=" width:10%; height:auto; position:relative;  margin:0 auto; " align="center">
-        <img  src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Logo_PMPR_2.svg/800px-Logo_PMPR_2.svg.png" alt="Smiley face" height="70" width="60">
+<div class="example-wrapper" style="background:white; height: 90px;" >
+    <div style=" width:8%; height:auto; padding-top:8px;  margin-left:25px; " align="center">
+        <img style=" " src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Logo_PMPR_2.svg/800px-Logo_PMPR_2.svg.png" alt="Smiley face" height="70" width="60">
     </div>
 </div>
 
-<hr>
-  
 <div style=" width:100%; height:auto; position:relative; top: 80px;" align="center" >
-    <span style=" margin:auto;"> Administrador   ✅  </span>
-    <br>
+    <div style=" width:10%; height:auto; ">
+        <h5 style="font-family: 'Manrope', sans-serif;"> Administrador   ✅  </h5>
+    </div>
     <div style="width:80px; height:80px; box-shadow: 1px 2px 3px 0px lightgray; border-radius:4%; display:inline-block;">
         <a style="position:relative; top:10px;" href="/cadastrar/medico/newdoctor">
             <i class="fas fa-users" style="font-size:30px; " ></i>
@@ -44,5 +44,22 @@
         <span style="font-size:12px;"> Editar </span>
     </div>
 </div>
+
+<section style="width:100%; height:auto;">
+    <div style="width:100%; height:70px; background:white; position:absolute; bottom:0px; "> 
+        <div style=" display:inline-block; width:8%; height:auto;  padding-top: 6px; margin-left:25px; " align="center">
+            <img style=" " src="https://www.pikpng.com/pngl/m/204-2047354_doctor-icon-medicina-png-animado-clipart.png" alt="Smiley face" height="54" width="50">
+        </div>
+        <div align="center" style="width:110px; height:auto; padding-top:8px; float:right; margin-right: 40px; display:inline-block;">
+            <i style="font-size: 15px; color:#afafaf; " class="fas fa-unlock-alt"></i> <br>
+            <a  href="#" style="color:#034F84; font-size:12px; color:magenta;"> <strong> <u> Alterar senha. </strong> </u> </a>
+        </div>
+
+        <div align="center" style="width:110px; height:auto; padding-top:8px; float:right; margin-right: 40px; display:inline-block;">
+            <i style="font-size: 15px; color:#afafaf; " class="fas fa-phone-alt"> HPM </i> <br>
+            <span  style="color:#034F84; font-size:12px; ">  (41)3333 3333.  </span>
+        </div>
+    </div>
+</section>
 
  {% endblock %}

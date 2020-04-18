@@ -6,7 +6,7 @@
 use Symfony\Component\DependencyInjection\Dumper\Preloader;
 
 require dirname(__DIR__, 3).'/vendor/autoload.php';
-require __DIR__.'/Container6LBuP9R/App_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerVt3Nzbi/App_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -27,10 +27,15 @@ $classes[] = 'Symfony\Bridge\Monolog\Logger';
 $classes[] = 'Symfony\Component\HttpFoundation\RequestMatcher';
 $classes[] = 'Symfony\Component\DependencyInjection\ServiceLocator';
 $classes[] = 'App\Controller\AdminManagementController';
+$classes[] = 'App\Controller\BuscaPacienteTriagemController';
 $classes[] = 'App\Controller\CadastrarMedicoController';
 $classes[] = 'App\Controller\EditarCadastroMedicoController';
+$classes[] = 'App\Controller\EmitirAtestadoAfastamentoController';
+$classes[] = 'App\Controller\ListAtestadosController';
 $classes[] = 'App\Controller\ManagementMedicoController';
 $classes[] = 'App\Controller\MedicoController';
+$classes[] = 'App\Controller\ObtainRowCosultasController';
+$classes[] = 'App\Controller\RegistrarProntuarioController';
 $classes[] = 'App\Controller\SalaController';
 $classes[] = 'App\Controller\SecurityController';
 $classes[] = 'App\Controller\SecurityControllerMedicoController';

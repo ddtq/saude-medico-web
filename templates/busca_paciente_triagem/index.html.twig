@@ -1,0 +1,129 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BuscaPacienteTriagemController!{% endblock %}
+
+{% block body %}
+
+<style>
+    .example-wrapper {   margin-top: -1px; width: 100%; height:auto;}
+    .example-wrapper code { background: white; padding: 2px 6px; }
+    .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    max-width:97%;
+    grid-column-gap: 5px;
+    grid-row-gap:5px;
+    }
+    .grid-item {
+    background-color: transparent;
+    border: solid 1px #868e96;
+    padding: 8px;
+    font-size: 12px;
+    text-align: center;
+    }
+</style>
+
+<div class="mb-3" style="float:right; text-align:center; padding-top: 15px; margin-right:20px; ">
+    <i style="color:cian; font-size:14px;" class="fa fa-home"></i> <br>
+    <a href="/medico/management" style="color:cian; font-size:12px;"> <strong> Home </strong> </a > 
+</div>
+
+<div class="example-wrapper" style="background:white; height: 80px;" >
+    <div style=" width:8%; height:auto; padding-top:8px;  margin-left:25px; " align="center">
+        <img style=" " src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Logo_PMPR_2.svg/800px-Logo_PMPR_2.svg.png" alt="Smiley face" height="70" width="60">
+    </div>
+</div>
+
+<div style="width:100%; height:auto; " align="center">
+    <i class="fas fa-id-card" style="font-size:25px; margin-top:8px;"></i> <br>
+    <h5  style="font-family: 'Manrope', sans-serif;" > Ficha Individual. </h5>
+</div>
+
+{# <div style="width:100%; height:auto; " align="center">
+    <i class="fas fa-head-side-cough" style= " font-size: 350px; opacity:0.04; margin-top:40px; ">  </i> 
+</div> #}
+
+<section style="width:100%; height:auto;"> 
+    <div style="width:100%; height:600px; "> 
+        <div style="width:100%; height:auto; " align="center">
+            <i class="fas fa-head-side-cough" style= " font-size: 350px; opacity:0.04; margin-top:40px; ">  </i> 
+        </div> 
+
+        <div style="width:100%; height:auto;position:absolute; top: 170px;" align="center"> 
+            <div class="grid-container">
+                <div class="grid-item"> 
+                    <span style="font-size:13px;"> <strong> Nome: </strong> Corona vírus da Silva. </span>
+                </div>
+                <div class="grid-item"> Rg: 11111111111111 </div>
+                <div class="grid-item"> Telefone: (41)99999 8888</div>
+                <div class="grid-item"> Data Nascimento: 20/09/1945</div>
+                <div class="grid-item"> Posto/Graduação: Cel Sd Chimbinha </div>
+                <div class="grid-item"> Information: Relative</div>
+            </div>  
+
+            <div style="width:100%; height:auto;" align="center">
+                <div style="width:95%; height:auto; border-bottom:solid 3px white; border-top:solid 3px white;">
+                    <span style="font-size:18px; color:#0c8599;"> Respostas informadas no questionário. </span>
+                </div>
+            </div>
+
+            <div class="grid-container">
+                <div class="grid-item">Cansaço: Sim</div>
+                <div class="grid-item">Congestão Nasal: Sim</div>
+                <div class="grid-item">Corrimento Nasal (Coriza): Sim</div>
+                <div class="grid-item">Dificuldade para respirar: Sim</div>
+                <div class="grid-item">Dor de cabeça: Sim </div>
+                <div class="grid-item">Dor de garganta: Sim </div>
+                <div class="grid-item">Dores pelo corpo: Sim </div>
+                <div class="grid-item">Febre: Sim </div>
+                <div class="grid-item">Mal estar geral: Sim </div>
+                <div class="grid-item">Tosse: Sim </div>
+                <div class="grid-item">Inicio dos sintomas: 2020-03-25T16:04:53.399-03:00 </div>
+                <div class="grid-item">Contato com suspeito da virose: Sim </div>
+                <div class="grid-item">Contato com confirmado: Sim </div>
+                <div class="grid-item">Esteve em outro país: Sim</div>
+                <div class="grid-item">Onde: Sildavia </div>
+                <div class="grid-item">Cidade: Escandinávia </div>
+                <div class="grid-item">Telefone contato: 0987654</div>
+                <div class="grid-item"> -- </div>
+                <div class="grid-item"> <a href="https://meet.jit.si/ddtq/StiveMaster"> <button style="width:100%; height: 25px; background: #88c0d0;"> <span style="letter-spacing: 1px; color:whiteSmoke;"> <strong> <i class="fas fa-sms"></i> Enviar SMS e iniciar Atendimento. </strong> </span> </button> </a>  </div>
+                <div class="grid-item"> <a href="/medico/registrar/prontuario"> <button style="width:100%; height: 25px; background: #3b4252;"> <span style="letter-spacing: 1px; color:whiteSmoke;"> <strong> <i class="far fa-clipboard"></i> Abrir prontuário. </strong> </span> </button> </a>  </div>
+                <div class="grid-item"> <a href="/medico/emitir/atestado/afastamento"> <button style="width:100%; height: 25px; background: #868e96;"> <span style="letter-spacing: 1px; color:whiteSmoke;"> <strong> <i class="fas fa-house-user"></i> Emitir afastamento. </strong> </span> </button> </a>  </div>
+            </div>
+            <div style="width:300px; height:auto; margin-left: 30px; margin-top: 20px;  " >
+            <span style="font-size:18px;"> <i style="color:red; font-size:24px;" class="fas fa-biohazard"></i> </span>
+            <span style="font-size:12px;"> Apresenta evidências de contágio. </span>       
+            </div>  
+        </div>
+    </div>
+</section> 
+
+
+     
+
+{# footer #}
+<section style="width:100%; height:auto; ">
+    <div style="width:100%; height:70px; background:white; "> 
+        <div style=" display:inline-block; width:8%; height:auto;  padding-top: 6px; margin-left:25px; " align="center">
+            <img style=" " src="https://www.pikpng.com/pngl/m/204-2047354_doctor-icon-medicina-png-animado-clipart.png" alt="Smiley face" height="54" width="50">
+        </div>
+
+        <div align="center" style="width:110px; height:auto; padding-top:8px; float:right; margin-right: 40px; display:inline-block;">
+            <i style="font-size: 15px; color:#afafaf; " class="fas fa-unlock-alt"></i> <br>
+            <a  href="#" style="color:#034F84; font-size:12px; color:magenta;"> <strong> <u> Alterar senha. </strong> </u> </a>
+        </div>
+
+        <div align="center" style="width:110px; height:auto; padding-top:12px; float:right; margin-right: 40px; display:inline-block;">
+            <i style="font-size: 15px; color:#afafaf; " class="fas fa-phone-alt"> HPM </i> <br>
+            <span  style="color:#034F84; font-size:12px; ">  (41)3333 3333.  </span>
+        </div>
+    </div>
+</section>
+
+
+    {# <ul>
+        <li>Your controller at <code><a href="{{ '/home/renanbrs/Saude-Medico/src/Controller/BuscaPacienteTriagemController.php'|file_link(0) }}">src/Controller/BuscaPacienteTriagemController.php</a></code></li>
+        <li>Your template at <code><a href="{{ '/home/renanbrs/Saude-Medico/templates/busca_paciente_triagem/index.html.twig'|file_link(0) }}">templates/busca_paciente_triagem/index.html.twig</a></code></li>
+    </ul> #}
+{% endblock %}

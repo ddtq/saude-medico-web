@@ -59,7 +59,7 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
         $this->displayBlock('stylesheets', $context, $blocks);
         // line 10
         echo "    </head>
-    <body style=\"background:#efefef; overflow:hidden;\" >
+    <body style=\"background:#efefef; overflow-x:hidden;\" >
         ";
         // line 12
         $this->displayBlock('body', $context, $blocks);
@@ -157,7 +157,7 @@ class __TwigTemplate_673ac66f51df2a800dec9a5360f8c80dc15587b1ffc1305bfdd3fa7914e
         <script src=\"https://kit.fontawesome.com/ede63b39db.js\" crossorigin=\"anonymous\"></script>
         {% block stylesheets %}{% endblock %}
     </head>
-    <body style=\"background:#efefef; overflow:hidden;\" >
+    <body style=\"background:#efefef; overflow-x:hidden;\" >
         {% block body %}
             <script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\" integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\" crossorigin=\"anonymous\"></script>
             <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\" integrity=\"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo\" crossorigin=\"anonymous\"></script>

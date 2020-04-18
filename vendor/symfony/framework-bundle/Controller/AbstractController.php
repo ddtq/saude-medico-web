@@ -38,6 +38,7 @@ use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use Symfony\Component\Security\Core\Exception\CustomUserMessageAuthenticationException;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Csrf\CsrfToken;
 use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
@@ -315,7 +316,8 @@ abstract class AbstractController implements ServiceSubscriberInterface
         if (!class_exists(AccessDeniedException::class)) {
             throw new \LogicException('You can not use the "createAccessDeniedException" method if the Security component is not available. Try running "composer require symfony/security-bundle".');
         }
-        return new AccessDeniedException("uuuuuuuiiiiii", $previous);
+        throw new CustomUserMessageAuthenticationException("Faça Login novamente.");
+        // return new AccessDeniedException("Acesso negado faça o login novamente", $previous);
     }
 
     /**

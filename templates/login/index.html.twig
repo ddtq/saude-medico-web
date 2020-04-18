@@ -10,9 +10,10 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<br>  
+<br> <br>
 
-<div class="example-wrapper" align="center" style="box-shadow: 0px 1px 3px 2px lightgray; border-radius:2%;" >
+<div class="example-wrapper" align="center" style=" background-image: linear-gradient(130deg, #495057 13%, #ffb90f 14%, #ffb90f 25%, transparent 26% ); box-shadow: 0px 1px 3px 2px lightgray; border-radius:2%;" >
+    <h5 style=" position:relative; top:-25px; font-family: 'Manrope', sans-serif; ">  Área do administrador.   </h5>
     <br>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Logo_PMPR_2.svg/800px-Logo_PMPR_2.svg.png" alt="Smiley face" height="160" width="140">
     <br>  <br>
@@ -23,14 +24,14 @@
 
         <div class="form-group">
             <label for="exampleInputCpf"> <i class="fas fa-cogs"></i> CPF </label>
-            <input type="text"  name="cpf" id="exampleInputCpf" class="form-control"  maxlength="11" style="border:none; border-bottom:1px solid #ed9c2e; max-width:400px; background:transparent;">
+            <input type="text"  name="cpf" id="exampleInputCpf" class="form-control"  maxlength="11" style="max-width:200px;  background:transparent;">
         </div>
 
         <br> <br>
 
         <div class="form-group">
             <label for="exampleInputPassword"> <i class="fas fa-unlock-alt"></i> Password</label>
-            <input type="password"  name="password" class="form-control" id="exampleInputPassword" style="border:none; border-bottom:1px solid #ed9c2e; max-width:400px;  background:transparent;">
+            <input type="password"  name="password" class="form-control" id="exampleInputPassword" style=" max-width:200px;  background:transparent;">
         </div>
 
         <input type="hidden" name="_csrf_token" value="{{csrf_token('authenticate')}}" > 
@@ -39,6 +40,5 @@
 
         <br> <br>
     </form>
-    
 </div>
 {% endblock %}
